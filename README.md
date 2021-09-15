@@ -1,0 +1,2 @@
+# ShareTargetPickerAgent
+ShareTargetPickerAgent for GAS
