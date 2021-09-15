@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ShareTargetPickerAgent</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+	<script>
+		const proc = () => {
+			const liff = window.liff;						
+			liff.init({liffId: liffId})
+			.then(() => {
+				if (liff.isLoggedIn()) {
+					if (liff.isApiAvailable('shareTargetPicker')) {
+					  liff.shareTargetPicker(message);
+					}
+				} else {
+					liff.login({redirectUri:window.location.href});
+				}
+			})
+			.catch(error => {
+			});
+		}
+		
+		let urlParams = new URLSearchParams(window.location.search);
+		
+		const params = urlParams.has('liff.state')? new URLSearchParams(urlParams.get('liff.state')) : urlParams;
+		
+	    const senderDomain = params.get('sender');
+		const liffId = params.get('liffId');
+		const msg = params.get('message');
+		if(msg==null)
+		{
+			console.log("msg can't be null");
+			return;
+		}
+		const message = JSON.prase(decodeURIComponent(msg));
+		proc();
+	</script>
+</body>
+
+</html>
