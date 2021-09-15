@@ -16,18 +16,18 @@
 			.then(() => {
 				if (liff.isLoggedIn()) {
 					if (liff.isApiAvailable('shareTargetPicker')) {
-					  liff.shareTargetPicker([getMessage(bookName,album,cover,chp)]);
+					  liff.shareTargetPicker([getMessage(bookName,bookId,cover,chp)]);
 					}
 				} else {
 					liff.login({redirectUri:window.location.href});
 				}
 			})
-			.catch(error => {
+			.catch(error => {			
 			});
 		}
 		document.getElementById('send').addEventListener('click',()=>proc());
 		
-		const getMessage = (bookName,album,cover,chp)=>{
+		const getMessage = (bookName,bookId,cover,chp)=>{
 			return {			
 			  "type": "flex",
 			  "altText": "Flex Message",
@@ -47,7 +47,7 @@
 						"action": {
 						  "type": "uri",
 						  "label": "action",
-						  "uri": "https://script.google.com/a/g.ntu.edu.tw/macros/s/AKfycbz6EII_EOLzLO7D-xCT3eaLv0Zs_JSQ1tRSSgJom7u1EdOhRFw/exec?album="+album+"&title="+encodeURIComponent(chp)
+						  "uri": "https://script.google.com/a/g.ntu.edu.tw/macros/s/AKfycbz6EII_EOLzLO7D-xCT3eaLv0Zs_JSQ1tRSSgJom7u1EdOhRFw/exec?bookId="+bookId+"&title="+encodeURIComponent(chp)
 						}
 					  },
 					  {
@@ -108,7 +108,7 @@
 		
 		const liffId = params.get('liffId');
 		const bookName = params.get('bookName');
-		const album = params.get('album');
+		const bookId = params.get('bookId');
 		const cover = params.get('cover');
 		const chp = params.get('chp');
 		
