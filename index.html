@@ -6,6 +6,7 @@
 </head>
 
 <body>
+	<button id=send">若無反應請按此按鈕</button>
 	<script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 	<script>
 		const proc = () => {
@@ -23,6 +24,7 @@
 			.catch(error => {
 			});
 		}
+		document.getElementById('send').addEventListener('click',()=>proc());
 		
 		const getMessage = (bookName,album,cover,chp)=>{
 			return {			
