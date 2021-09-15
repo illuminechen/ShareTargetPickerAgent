@@ -33,10 +33,12 @@
 		if(msg==null)
 		{
 			console.log("msg can't be null");
-			return;
 		}
-		const message = JSON.prase(decodeURIComponent(msg));
-		proc();
+		else 
+		{	
+			const message = JSON.prase(decodeURIComponent(msg));
+			proc();
+		}
 	</script>
 </body>
 
