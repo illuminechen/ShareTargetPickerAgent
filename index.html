@@ -14,7 +14,7 @@
 			.then(() => {
 				if (liff.isLoggedIn()) {
 					if (liff.isApiAvailable('shareTargetPicker')) {
-					  liff.shareTargetPicker(getMessage(bookName,album,cover,chp));
+					  liff.shareTargetPicker([getMessage(bookName,album,cover,chp)]);
 					}
 				} else {
 					liff.login({redirectUri:window.location.href});
