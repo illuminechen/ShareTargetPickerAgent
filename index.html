@@ -25,73 +25,77 @@
 		}
 		
 		const getMessage = (bookName,album,cover,chp)=>{
-			return {
-			  "type": "bubble",
-			  "body": {
-				"type": "box",
-				"layout": "vertical",
-				"contents": [
-				  {
-					"type": "image",
-					"url": cover,
-					"size": "full",
-					"aspectMode": "cover",
-					"aspectRatio": "1:1.414",
-					"gravity": "center",
-					"action": {
-					  "type": "uri",
-					  "label": "action",
-					  "uri": "https://script.google.com/a/g.ntu.edu.tw/macros/s/AKfycbz6EII_EOLzLO7D-xCT3eaLv0Zs_JSQ1tRSSgJom7u1EdOhRFw/exec?album="+album+"&title="+encodeURIComponent(chp)
-					}
-				  },
-				  {
-					"type": "box",
-					"layout": "vertical",
-					"contents": [],
-					"position": "absolute",
-					"background": {
-					  "type": "linearGradient",
-					  "angle": "0deg",
-					  "endColor": "#00000000",
-					  "startColor": "#00000099"
-					},
-					"width": "100%",
-					"height": "40%",
-					"offsetBottom": "0px",
-					"offsetStart": "0px",
-					"offsetEnd": "0px"
-				  },
-				  {
+			return {			
+			  "type": "flex",
+			  "altText": "Flex Message",
+			  "contents": {
+				  "type": "bubble",
+				  "body": {
 					"type": "box",
 					"layout": "vertical",
 					"contents": [
 					  {
-						"type": "text",
-						"text": bookName,
-						"size": "xl",
-						"color": "#ffffff",
-						"weight": "bold",
-						"wrap": true
+						"type": "image",
+						"url": cover,
+						"size": "full",
+						"aspectMode": "cover",
+						"aspectRatio": "1:1.414",
+						"gravity": "center",
+						"action": {
+						  "type": "uri",
+						  "label": "action",
+						  "uri": "https://script.google.com/a/g.ntu.edu.tw/macros/s/AKfycbz6EII_EOLzLO7D-xCT3eaLv0Zs_JSQ1tRSSgJom7u1EdOhRFw/exec?album="+album+"&title="+encodeURIComponent(chp)
+						}
 					  },
 					  {
-						"type": "text",
-						"text": chp,
-						"size": "md",
-						"color": "#ffffff",
-						"weight": "bold",
-						"wrap": false,
-						"adjustMode": "shrink-to-fit"
+						"type": "box",
+						"layout": "vertical",
+						"contents": [],
+						"position": "absolute",
+						"background": {
+						  "type": "linearGradient",
+						  "angle": "0deg",
+						  "endColor": "#00000000",
+						  "startColor": "#00000099"
+						},
+						"width": "100%",
+						"height": "40%",
+						"offsetBottom": "0px",
+						"offsetStart": "0px",
+						"offsetEnd": "0px"
+					  },
+					  {
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+						  {
+							"type": "text",
+							"text": bookName,
+							"size": "xl",
+							"color": "#ffffff",
+							"weight": "bold",
+							"wrap": true
+						  },
+						  {
+							"type": "text",
+							"text": chp,
+							"size": "md",
+							"color": "#ffffff",
+							"weight": "bold",
+							"wrap": false,
+							"adjustMode": "shrink-to-fit"
+						  }
+						],
+						"position": "absolute",
+						"paddingAll": "20px",
+						"offsetBottom": "0px",
+						"offsetStart": "0px",
+						"offsetEnd": "0px"
 					  }
 					],
-					"position": "absolute",
-					"paddingAll": "20px",
-					"offsetBottom": "0px",
-					"offsetStart": "0px",
-					"offsetEnd": "0px"
+					"paddingAll": "0px"
 				  }
-				],
-				"paddingAll": "0px"
-			  }
+				}
 			};
 		}
 		
