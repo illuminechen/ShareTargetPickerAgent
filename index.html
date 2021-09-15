@@ -28,7 +28,6 @@
 		
 		const params = urlParams.has('liff.state')? new URLSearchParams(urlParams.get('liff.state')) : urlParams;
 		
-	    const senderDomain = params.get('sender');
 		const liffId = params.get('liffId');
 		const msg = params.get('message');
 		if(msg==null)
