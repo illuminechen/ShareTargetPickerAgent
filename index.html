@@ -28,7 +28,7 @@
 		const getMessage = (bookName,bookId,cover,chp)=>{
 			return {			
 			  "type": "flex",
-			  "altText": chp,
+			  "altText": decodeURIComponent(chp),
 			  "contents": {
 				  "type": "bubble",
 				  "body": {
