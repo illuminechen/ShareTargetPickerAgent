@@ -7,6 +7,7 @@
 </head>
 
 <body>
+	<div id="result"></div><button id ="resent" style="display:none;">重傳</button>	
 	<script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 	<script>
 		const proc = () => {
@@ -16,6 +17,10 @@
 				if (liff.isLoggedIn()) {
 					if (liff.isApiAvailable('shareTargetPicker')) {
 					  liff.shareTargetPicker([getMessage(bookName,bookId,cover,chp)]);
+					  
+					  document.getElementById('result').innerHTML = "傳送完畢即可離開此頁面。或是你想要:";
+					  document.getElementById('resent').style.display = "block";
+					  
 					}
 				} else {
 					liff.login({redirectUri:window.location.href});
