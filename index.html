@@ -30,6 +30,10 @@
 			});
 		}
 		
+		document.getElementById('resent').addEventListener(function(){
+			proc();
+		});
+
 		const getMessage = (bookName,bookId,cover,chp)=>{
 			return {			
 			  "type": "flex",
