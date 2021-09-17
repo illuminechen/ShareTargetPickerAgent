@@ -34,10 +34,7 @@
 		};
 		
 		document.getElementById('resent').addEventListener('click',function(){
-			liff.openWindow({
-				url: window.location.href, // URL for another LIFF app
-				external: true
-			});
+			liff.shareTargetPicker([getMessage(bookName,bookId,cover,chp)]);
 		});
 
 		const getMessage = (bookName,bookId,cover,chp)=>{
