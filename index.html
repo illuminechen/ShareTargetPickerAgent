@@ -40,7 +40,7 @@
 		const getMessage = (bookName,bookId,cover,chp)=>{
 			return {			
 			  "type": "flex",
-			  "altText": decodeURIComponent(chp),
+			  "altText": chp,
 			  "contents": {
 				  "type": "bubble",
 				  "body": {
@@ -119,8 +119,8 @@
 		const liffId = params.get('liffId');
 		const bookName = params.get('bookName');
 		const bookId = params.get('bookId');
-		const cover = params.get('cover');
-		const chp = params.get('chp');
+		const cover = decodeURI(params.get('cover'));
+		const chp = decodeURIComponent(params.get('chp'));
 		
 		
 	</script>
