@@ -22,7 +22,7 @@
 							document.getElementById('resent').style.display = "block";
 						}).catch((res)=>{
 							console.log(res);
-							document.getElementById('result').innerHTML = "傳送尚未成功:"+res.message;
+							document.getElementById('result').innerHTML = "傳送尚未成功:"+JSON.stringify(res);
 							document.getElementById('resent').style.display = "block";
 						});
 					}
