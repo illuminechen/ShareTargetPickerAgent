@@ -18,18 +18,12 @@
 						liff.shareTargetPicker([getMessage(bookName,bookId,cover,chp)])
 						.then(()=>
 						{
-							if (liff.isInClient()) {
-								liff.closeWindow();
-							}
 							document.getElementById('result').innerHTML = "傳送完畢即可離開此頁面。或是你想要:";
 							document.getElementById('resent').style.display = "block";
 						}).catch((res)=>{
 							console.log(res);
 							document.getElementById('result').innerHTML = "傳送尚未成功:";
 							document.getElementById('resent').style.display = "block";
-							if (liff.isInClient()) {
-								liff.closeWindow();
-							}														
 						});
 					}
 				} else {
@@ -37,9 +31,6 @@
 				}
 			})
 			.catch(error => {
-				if (liff.isInClient()) {
-					liff.closeWindow();
-				}
 			});
 		}
 		
