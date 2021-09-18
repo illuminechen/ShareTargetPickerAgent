@@ -23,7 +23,8 @@
 						}).catch((res)=>{
 							console.log(res);
 							liff.logout();
-							proc();
+							document.getElementById('result').innerHTML = "傳送尚未成功:";
+							document.getElementById('resent').style.display = "block";
 						});
 					}
 				} else {
